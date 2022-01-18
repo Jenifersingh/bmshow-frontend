@@ -8,7 +8,7 @@ import { ReactComponent as BmsLogoIcon } from "../../assets/svg/bmsLogo.svg";
 import { Context } from "../../store/context";
 import { OPEN_AUTH } from "../../store/action.types";
 
-export const Base = ({ children, enabled = true }) => {
+export const Base = ({ onHistory, children, enabled = true }) => {
   const { dispatch } = useContext(Context);
 
   const onSignIn = () => {
@@ -36,6 +36,9 @@ export const Base = ({ children, enabled = true }) => {
                 <button onClick={onSignIn} className={styles.signInButton}>
                   Sign In
                 </button>
+              </div>
+              <div onClick={onHistory} className={styles.bookings}>
+                <span>Bookings</span>
               </div>
             </nav>
           </div>
